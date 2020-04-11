@@ -1,0 +1,9 @@
+.container--countries {
+  margin-top: 20px;
+  display: grid;
+  grid-template: 300px / repeat(4, 250px);
+  justify-content: space-evenly;
+  grid-auto-columns: repeat(4, 250px);
+  grid-auto-rows: 300px;
+  grid-row-gap: 20px;
+}
