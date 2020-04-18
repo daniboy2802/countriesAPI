@@ -10,7 +10,7 @@ export default class ContainerFlags extends Component {
         <container className={styles["container--countries"]}>
           {countries && (
             countries.map((countrie, key) => (
-              <Countrie countrie={countrie}></Countrie>
+              <Countrie countrie={countrie} key={key}></Countrie>
             ))  
           )}
         </container>

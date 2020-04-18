@@ -1,0 +1,49 @@
+.containerImg {
+  width: 100%;
+  height: 370px;
+  display: flex;
+  justify-content: center;
+  & img {
+    max-width: 50%;
+  }
+}
+
+.answersContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.buttonAnswer {
+  &--active {
+    border: none;
+    background-color: #21ba45;
+    color: white;
+    height: 40px;
+    width: 40%;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-size: 20px;
+    &:hover {
+      border: 1px solid #f1f1f1;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &--desactive {
+    border: none;
+    background-color: white;
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-size: 20px;
+    &:hover {
+      border: 1px solid red;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

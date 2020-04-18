@@ -3,7 +3,7 @@ import styles from '../styles/modules/countrie.module.scss'
 
 export default class Countrie extends Component {
   render() {
-    const { countrie  } = this.props
+    const { countrie } = this.props
     return(
       <div className={styles["countrie"]}>
         <div className={styles["extra--information"]}>

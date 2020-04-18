@@ -5,6 +5,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import App from './App';
 import Layout from './components/layout'
 import Countries from './components/countriesCaller'
+import GuessCountrie from './components/guessCountrie'
 import * as serviceWorker from './serviceWorker';
 
 
@@ -19,9 +20,13 @@ const rendering = (
           <li>
             <Link to="/countries">Countries</Link>
           </li>
+          <li>
+            <Link to="/guessCountrie">guessCuntrie</Link>
+          </li>
         </ul>
         <Route exact path="/" component={App} />
         <Route path="/countries" component={Countries} />
+        <Route path="/guessCountrie" component={GuessCountrie} />
       </div>
     </Layout>
   </Router>
