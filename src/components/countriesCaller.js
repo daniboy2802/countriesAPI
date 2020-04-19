@@ -41,7 +41,6 @@ export default class CountrieCaller extends Component {
             <ContainerFlags countries={realData}></ContainerFlags>
           )}
         </div>
-        
       </div>
     )
   }

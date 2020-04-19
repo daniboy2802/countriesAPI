@@ -10,6 +10,10 @@ export default class answers extends Component {
       }
   }
 
+  componentWillReceiveProps() {
+    this.setState({ isCorrect: null, active:null })
+  }
+
   renderQuestion = () => {
     const { correctAnswer, criterio } = this.props
     if(criterio === 'flag') {
@@ -39,11 +43,11 @@ export default class answers extends Component {
     this.setState({ 
       active: e.target.value 
     }, () => {
-      this.setCorrectState()
+      this.setCorrectAnswerState()
     })
   }
 
-  setCorrectState = () => {
+  setCorrectAnswerState = () => {
     const { active } = this.state
     const { correctAnswer } = this.props
     correctAnswer.name === active ? this.setState({ isCorrect:true }) : this.setState({ isCorrect:false })

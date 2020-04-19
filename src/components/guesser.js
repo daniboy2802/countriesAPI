@@ -6,10 +6,8 @@ export default class Guesser extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      active: null, 
       countries: null,
       answers: [],
-      render: false,
     }
   }
   
@@ -22,7 +20,7 @@ export default class Guesser extends Component {
   }
 
   renderByCritery = () => {
-    const { countries, active, answers } = this.state
+    const { countries, answers } = this.state
     const options = [1, 2, 3, 4]
     let correctAnswer = null
 
@@ -31,6 +29,7 @@ export default class Guesser extends Component {
         answers.push(countries[Math.floor(Math.random() * countries.length)])
       })
     }
+
     correctAnswer = answers[Math.floor(Math.random() * answers.length)]
     return this.renderByFlag(answers, correctAnswer)
   }
