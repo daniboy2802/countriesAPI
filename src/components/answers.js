@@ -35,15 +35,15 @@ export default class answers extends Component {
     }
   }
 
-  setActive = (e) => {
+  setActiveAnswer = (e) => {
     this.setState({ 
       active: e.target.value 
     }, () => {
-      this.setCorrectState()
+      this.setCorrectAnswer()
     })
   }
 
-  setCorrectState = () => {
+  setCorrectAnswer = () => {
     const { active } = this.state
     const { correctAnswer } = this.props
     correctAnswer.name === active ? this.setState({ isCorrect:true }) : this.setState({ isCorrect:false })
@@ -56,7 +56,7 @@ export default class answers extends Component {
       <div className={styles.answersContainer}>
         {answers.map((answer, key) => (
           <button 
-            onClick={this.setActive.bind(this)} 
+            onClick={this.setActiveAnswer.bind(this)} 
             value={answer}
             key={key}
             className={`${answer === active ? styles['buttonAnswer--active'] : styles['buttonAnswer--desactive']}`}
