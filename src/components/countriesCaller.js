@@ -8,21 +8,21 @@ export default class CountrieCaller extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: null,
+      countries: null,
       criterio: null,
     }
   }
   
   getTheCountries = () => {
     getAllCountries()
-      .then(data => {
-        this.setState({ data })
+      .then(countries => {
+        this.setState({ countries })
       })
   }
 
   render() {
-    const { data, criterio } = this.state
-    const realData = (criterio && data && criterio !== 'All') ? data.filter((c) => criterio === c.region) : data
+    const { countries, criterio } = this.state
+    const countriesFilter = (criterio && countries && criterio !== 'All') ? countries.filter((c) => criterio === c.region) : countries
     return(
       <div>
         <div className={styles.media}>
@@ -37,8 +37,8 @@ export default class CountrieCaller extends Component {
           <button className={styles.button} onClick={this.getTheCountries}>Presioname para llamar a los países</button>
         </div>
         <div>
-          {data && (
-            <ContainerFlags countries={realData}></ContainerFlags>
+          {countries && (
+            <ContainerFlags countries={countriesFilter}></ContainerFlags>
           )}
         </div>
         
