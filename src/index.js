@@ -4,6 +4,7 @@ import './index.css';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import App from './App';
 import Layout from './components/layout'
+import Reinas from './components/reinas'
 import Countries from './components/countriesCaller'
 import GuessCountrie from './components/guessCountrie'
 import * as serviceWorker from './serviceWorker';
@@ -23,10 +24,14 @@ const rendering = (
           <li>
             <Link to="/guessCountrie">guessCuntrie</Link>
           </li>
+          <li>
+            <Link to="/reinas">reinas</Link>
+          </li>
         </ul>
         <Route exact path="/" component={App} />
         <Route path="/countries" component={Countries} />
         <Route path="/guessCountrie" component={GuessCountrie} />
+        <Route path="/reinas" component={Reinas} />
       </div>
     </Layout>
   </Router>
